@@ -12,13 +12,64 @@
     <body>
      <h1 id="tytul2">Stronka taka piekna o </h1>
         <a href ="stronka.html"> Główna </a>
-     <a href ="strona1.html"> stronaa 1 </a>
+     <a href ="strona1.html"> strona 1 </a>
      <a href ="strona2.html"> strona 2 </a>
      <a href ="strona3.html"> strona 3 </a>
      <a href ="strona4.html"> strona 4 </a>
      <a href ="strona5.html"> strona 5 </a>
+   
+     <table id=kalkulator> 
+        <tr> 
+           <td colspan="3"><input type="text" id="wynik"/></td> 
+           <td><input type="button" value="c" onclick="czysc()"/> </td> 
+        </tr> 
+        <tr> 
+           <td><input type="button" value="1" onclick="liczba('1')"/> </td> 
+           <td><input type="button" value="2" onclick="liczba('2')"/> </td> 
+           <td><input type="button" value="3" onclick="liczba('3')"/> </td> 
+           <td><input type="button" value="/" onclick="liczba('/')"/> </td> 
+        </tr> 
+        <tr> 
+           <td><input type="button" value="4" onclick="liczba('4')"/> </td> 
+           <td><input type="button" value="5" onclick="liczba('5')"/> </td> 
+           <td><input type="button" value="6" onclick="liczba('6')"/> </td> 
+           <td><input type="button" value="-" onclick="liczba('-')"/> </td> 
+        </tr> 
+        <tr> 
+           <td><input type="button" value="7" onclick="liczba('7')"/> </td> 
+           <td><input type="button" value="8" onclick="liczba('8')"/> </td> 
+           <td><input type="button" value="9" onclick="liczba('9')"/> </td> 
+           <td><input type="button" value="+" onclick="liczba('+')"/> </td> 
+        </tr> 
+        <tr> 
+           <td><input type="button" value="." onclick="liczba('.')"/> </td> 
+           <td><input type="button" value="0" onclick="liczba('0')"/> </td> 
+           <td><input type="button" value="=" onclick="rozwiaz()"/> </td> 
+           <td><input type="button" value="*" onclick="liczba('*')"/> </td> 
+        </tr> 
+      </table>
+      <script> 
+        
+        function liczba(val) 
+        { 
+            document.getElementById("wynik").value+=val 
+        } 
+          
+       
+        function rozwiaz() 
+        { 
+            let x = document.getElementById("wynik").value 
+            let y = eval(x) 
+            document.getElementById("wynik").value = "H00J C1 W D00P3" 
+        } 
+        function czysc() 
+        { 
+            document.getElementById("wynik").value = "" 
+        } 
+     </script> 
         
        
         <script src="" async defer></script>
     </body>
 </html>
+
