@@ -10,28 +10,38 @@
         <link rel="stylesheet" href="stronka.css">
     </head>
     <body>
-     <h1 id="tytul1">Stronka taka piekna o HUBI TESTER</h1>
+     <h1 id="tytul1">Stronka taka piekna o </h1>
         <a href ="stronka.html"> Główna </a>
      <a href ="strona1.html"> strona 1 </a>
      <a href ="strona2.html"> strona 2 </a>
      <a href ="strona3.html"> strona 3 </a>
      <a href ="strona4.html"> strona 4 </a>
      <a href ="strona5.html"> strona 5 </a>
+     <br> 
      <br>
      <br>
+     <button  id=zmien type="button" onclick='zmienobr()' ondblclick='powrot()'  >klikklik</button>
+     <br>
+     <img src="fiolet.gif" id='fioletowy'>
      <img src="mem2.jpg" style="width:500px" id='janior'>
+     <img src="fiolet.gif" id='fioletowy2'>
+     
      
 
 
-     <button  id=zmien type="button" onclick='zmienobr()'  >klikklik</button>
+    
      <script>
      
          function zmienobr (){
-             document.getElementById('janior').src = "mem1.jpg"
-             documnet.getElementById("zmien").innerHTML = "NONIEE"
+             document.getElementById("janior").src = "brawo.jpg"
+             document.getElementById("zmien").innerHTML = "klik x2"
              }
+       function powrot (){
+           document.getElementById("janior").src = "mem2.jpg"
+           document.getElementById("zmien").innerHTML = "klik"
+       }
+     
          
-             
          
        
         </script>
