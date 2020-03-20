@@ -68,7 +68,7 @@
   body{
       background-color:black;
       padding: 20px;
-      
+      text-align: center;
   }
   p{
       text-align: center;
@@ -107,13 +107,12 @@
 #zmien{
     position: relative;
     width: 500px;
-    margin-left: 30%;
     background-color: rgb(203, 20, 220);
 }
 #fioletowy2{
 
  position: relative;
-  margin-left:200px;
+  margin-left:260px;
 }
 
 .title{ 
@@ -140,14 +139,18 @@
     } 
    
 #pies1{
-
+margin-top: 1%;
+width: 40%;
 }
 #pies2{
-    margin-top: 2%;
-    margin: 2%;
-   
+margin-top: 1%;
+width: 39.3%;
 }
-  
+  #kalkulator
+  {
+    margin:auto;
+    margin-top: 1%;
+  }
     
   
  
