@@ -105,9 +105,16 @@
     margin-left: 14%;
   }
 #zmien{
-    position: relative;
-    width: 500px;
-    background-color: rgb(203, 20, 220);
+  background-color: rgb(203, 20, 220);
+  border: none;
+  color: rgb(56, 10, 10);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 #fioletowy2{
 
@@ -151,6 +158,32 @@ width: 39.3%;
     margin:auto;
     margin-top: 1%;
   }
-    
+  #data{
+    color: rgb(20, 220, 127);
+
+  }
+  #button2{
+    background-color: rgb(20, 220, 127);
+  border: none;
+  color: rgb(56, 10, 10);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  }
+ #stopka{
+    font-size: 12px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(56, 10, 10);
+    color: white;
+    text-align: center;
+  }
+
   
  
