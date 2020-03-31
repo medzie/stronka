@@ -115,6 +115,10 @@
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  border-radius: 3px;
+}
+#zmien:hover{
+  background-color:rgb(243, 110, 255) ;
 }
 #fioletowy2{
 
@@ -173,6 +177,10 @@ width: 39.3%;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  border-radius: 3px;
+  }
+  #button2:hover{
+    background-color: rgb(110, 255, 187);
   }
  #stopka{
     font-size: 12px;
@@ -188,20 +196,23 @@ width: 39.3%;
 
  
   .question{
-    font-weight: 600;
+    font-weight: 400;
     color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
   .answers {
     margin-bottom: 20px;
     color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   
   }
   .answers label{
     display: block;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     
   }
   #submit{
-    font-family: sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
     background-color: rgb(56, 10, 10);
     color: #fff;
