@@ -19,10 +19,128 @@
      <a href ="strona5.html"> strona 5 </a>
 
 
-     <img src="szilala.jpg" id='pies1'>
-     <img src="szilala2.jpeg" id='pies2'>
+     <div id="quiz"></div>
+        <button id="submit">Rozwiąż</button>
+        <div id="results"></div>
+
+
+
+        <script>
+        (function(){
+            function buildQuiz(){
+              // zmienna do przechowywania danych wyjściowych 
+              const output = [];
+          
+              // dla kazdego pytania
+              myQuestions.forEach(
+                (currentQuestion, questionNumber) => {
+          
+                  // zmienna do przechowywania listy możliwych odpowiedzi
+                  const answers = [];
+          
+                  // i dla każdej  odpowiedzi
+                  for(letter in currentQuestion.answers){
+          
+                    // dodanie przycisku
+                    answers.push(
+                      `<label>
+                        <input type="radio" name="question${questionNumber}" value="${letter}">
+                        ${letter} :
+                        ${currentQuestion.answers[letter]}
+                      </label>`
+                    );
+                  }
+          
+                  // dodanie pytania i  jego odpowiedzi do wyniku
+                  output.push(
+                    `<div class="question"> ${currentQuestion.question} </div>
+                    <div class="answers"> ${answers.join('')} </div>`
+                  );
+                }
+              );
+          
+              // na koniec połącz naszą listę wyników w jeden ciąg HTML i umieść ją na stronie
+
+              quizContainer.innerHTML = output.join('');
+            }
+          
+            function showResults(){
+          
+              // zbierz odpowiedzi z quizu
+              const answerContainers = quizContainer.querySelectorAll('.answers');
+          
+              // sledz odp 
+              let numCorrect = 0;
+          
+              // dla kazdego pytania
+              myQuestions.forEach( (currentQuestion, questionNumber) => {
+          
+                // znajdz zaznaczone odp
+                const answerContainer = answerContainers[questionNumber];
+                const selector = `input[name=question${questionNumber}]:checked`;
+                const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+          
+                // jesli odpowiedz jest dobra
+                if(userAnswer === currentQuestion.correctAnswer){
+                  // dodaj punkt do dobrych odpowiedzi
+                  numCorrect++;
+          
+                  // zaznacz na zielono
+                  answerContainers[questionNumber].style.color = 'lightgreen';
+                }
+                // jesli odpowedzi sa zle
+                else{
+                  // zaznacz na czerwono
+                  answerContainers[questionNumber].style.color = 'red';
+                }
+              });
+          
+              // pokaz ilosc prawidlowych odp
+              resultsContainer.innerHTML = `${numCorrect}  z ${myQuestions.length}`;
+            }
+          
+            const quizContainer = document.getElementById('quiz');
+            const resultsContainer = document.getElementById('results');
+            const submitButton = document.getElementById('submit');
+            const myQuestions = [
+              {
+                question: "ile to 2+2?",
+                answers: {
+                  a: "12",
+                  b: "9",
+                  c: "4"
+                },
+                correctAnswer: "c"
+              },
+              {
+                question: "co tam?",
+                answers: {
+                  a: "supi dupii UwU",
+                  b: "slabiutko ;(",
+                  c: "idk jaka odp dac lol"
+                },
+                correctAnswer: "a"
+              },
+              {
+                question: "dzien dobry",
+                answers: {
+                  a: "jade na przymorze coś przekąsic",
+                  b: "dzien dobry",
+                  c: "jade na orlowo coś przekąsic",
+                  d: "dobry wieczór"
+                },
+                correctAnswer: "c"
+              }
+            ];
+          
+            // pokazanie wynikoq
+            buildQuiz();
+          
+            submitButton.addEventListener('click', showResults);
+          })();
+        </script>
        
-     <footer >
+       <footer >
    
         <p id="stopka"> Strona stworzona przez: Martyna Borkowska i Magda Woźniak &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kontakt: <a  href="mailto:marti.borkow@gmail.com">
             marti.borkow@gmail.com</a> <a  href="pojemnabogusia@wp.pl">
