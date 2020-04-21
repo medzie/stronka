@@ -10,18 +10,19 @@
         <link rel="stylesheet" href="stronka.css">
     </head>
     <body>
-     <h1 id="tytul3">Stronka taka piekna o </h1>
-        <a href ="stronka.html"> Główna </a>
-     <a href ="strona1.html"> strona 1 </a>
-     <a href ="strona2.html"> strona 2 </a>
-     <a href ="strona3.html"> strona 3 </a>
-     <a href ="strona4.html"> strona 4 </a>
-     <a href ="strona5.html"> strona 5 </a>
+     <h1 id="tytul3">WLZPAOW </h1>
+     <a href ="stronka.html">Strona główna </a>
+     <a href ="strona1.html"> Kadra </a>
+     <a href ="strona2.html"> Kalkulator promili </a>
+     <a href ="strona3.html"> Test </a>
+     <a href ="strona4.html"> Podopieczni </a>
+     <a href ="strona5.html"> Zapisy </a>
 
 
      <div id="quiz"></div>
         <button id="submit">Rozwiąż</button>
         <div id="results"></div>
+       
 
 
 
@@ -63,12 +64,13 @@
 
               quizContainer.innerHTML = output.join('');
             }
+            
           
             function showResults(){
           
               // zbierz odpowiedzi z quizu
               const answerContainers = quizContainer.querySelectorAll('.answers');
-          
+              
               // sledz odp 
               let numCorrect = 0;
           
@@ -92,44 +94,65 @@
                 else{
                   // zaznacz na czerwono
                   answerContainers[questionNumber].style.color = 'red';
+                  
                 }
               });
+              
           
               // pokaz ilosc prawidlowych odp
-              resultsContainer.innerHTML = `${numCorrect}  z ${myQuestions.length}`;
+              if(numCorrect == 0){
+              resultsContainer.innerHTML = `Twój wynik wynosi 0/3. Masz bardzo duży problem ze swoim uzależnieniami, jak najszybciej umów sie na wizyte stacjonarna  `;
+              }
+              if(numCorrect == 1){
+              resultsContainer.innerHTML = `Twój wynik wynosi 1/3. Jesteś uzależniony, zapisz sie na nasze zajęcia  `;
+
+              }
+              if(numCorrect == 2){
+              resultsContainer.innerHTML = `Twój wynik wynosi 2/3. Jesteś trochę uzależniony, skontaktuj sie z naszą kadrą na bezpłatną poradę gdzie porozmawiamy o twoim preblemie  `;
+              
+              
+              }
+              if(numCorrect == 3){
+              resultsContainer.innerHTML = `Twój wynik wynosi 3/3. Nie jesteś uzależniony według quizu nie potrzebujesz pomocy, ale jesli dalej masz wątpliwości skontaktuj sie z naszymy specjalistami `;
+              
+              
+              }
+             
             }
-          
+            
+
+            
+           
             const quizContainer = document.getElementById('quiz');
             const resultsContainer = document.getElementById('results');
             const submitButton = document.getElementById('submit');
             const myQuestions = [
               {
-                question: "ile to 2+2?",
+                question: "Co ile czasu spożywasz alkohol?",
                 answers: {
-                  a: "12",
-                  b: "9",
-                  c: "4"
-                },
-                correctAnswer: "c"
-              },
-              {
-                question: "co tam?",
-                answers: {
-                  a: "supi dupii UwU",
-                  b: "slabiutko ;(",
-                  c: "idk jaka odp dac lol"
+                  a: "Co weekend",
+                  b: "Co drugi dzień",
+                  c: "Codziennie"
                 },
                 correctAnswer: "a"
               },
               {
-                question: "dzien dobryyy",
+                question: "Czy zażywasz narkotyki?",
                 answers: {
-                  a: "jade na przymorze coś przekąsic",
-                  b: "dzien dobry",
-                  c: "jade na orlowo coś przekąsic",
-                  d: "dobry wieczór"
+                  a: "tak",
+                  b: "nie",
+                  c: "czasami"
                 },
-                correctAnswer: "c"
+                correctAnswer: "b"
+              },
+              {
+                question: "Czy ktoś z twojego otoczenia zauważył w Tobie jakąś zmiane? ",
+                answers: {
+                  a: "Tak",
+                  b: "Nie",
+                  c: "Nie przypominam sobie"
+                },
+                correctAnswer: "b" 
               }
             ];
           
@@ -138,13 +161,9 @@
           
             submitButton.addEventListener('click', showResults);
           })();
+         
         </script>
        
-       <footer >
-   
-        <p id="stopka"> Strona stworzona przez: Martyna Borkowska i Magda Woźniak &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kontakt: <a  href="mailto:marti.borkow@gmail.com">
-            marti.borkow@gmail.com</a> <a  href="pojemnabogusia@wp.pl">
-            pojemnabogusia@wp.pl</a>.</p>
-      </footer>
+       
     </body>
 </html>
