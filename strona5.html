@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html class="no-js"> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="stronka.css">
+    </head>
+    <body>
+     <h1 id="tytul5">WLZPAOW</h1>
+     <a href ="stronka.html">Strona główna </a>
+     <a href ="strona1.html"> Kadra </a>
+     <a href ="strona2.html"> Kalkulator promili </a>
+     <a href ="strona3.html"> Test </a>
+     <a href ="strona4.html"> Podopieczni </a>
+     <a href ="strona5.html"> Pakiety </a>
+
+     <br><br><br>
+
+     <div id="k">Koszyk</div><br><br>
+
+     <div id="t2">Pakiet dla pijących w weekendy [95 zł]</div>
+     <button class="dodaj" value="95" id="t1">Dodaj</button><br><br>
+
+     <div id="t2">Pakiet dla pijacych w dni nieparzyste [169 zł]</div>
+     <button class="dodaj" value="169" id="t1">Dodaj</button><br><br>
+     <div id="t2">Pakiet dla pijących w dni parzystke [125 zł]</div>
+
+     <button class="dodaj" value="125" id="t1">Dodaj</button><br><br>
+     <div id="t2">Pakiet rodzinny [525 zł]</div>
+     <button class="dodaj" value="525" id="t1">Dodaj</button><br><br>
+
+     <div id="t2">Pakiet dla singli "znajdź swojego alkholika" [190 zł]</div>
+     <button class="dodaj" value="190" id="t1">Dodaj</button><br><br>
+     <div id="t2">Kasuj</div>
+
+     <div id="t2">Pakiet dla moherów [69 zł]</div>
+     <button class="dodaj" value="69" id="t1">Dodaj</button><br><br>
+
+     <div id="t2">Pakiet dla trudniej młodzieży [10 zł]</div>
+     <button class="dodaj" value="10" id="t1">Dodaj</button><br><br>
+
+     <input type="button" value="result" id="t1" onclick="clr()"><br><br>
+
+     <script>
+     const divs = document.getElementsByClassName('dodaj');
+      const koszyk = document.getElementById("k");
+      let ogolnaCena = 0;
+      let item = 0;
+      
+      for(let i=0;i<divs.length; i++) {
+        divs[i].addEventListener('click', dodajDoKoszyka);
+      }
+      
+      function dodajDoKoszyka(){
+          let cena = parseFloat(this.value) + ogolnaCena;
+        item++
+        koszyk.innerHTML = `Łączna cena produktów w koszyku: ${cena} zł`;
+        ogolnaCena += parseFloat(this.value);
+      }
+
+      function clr() 
+         { 
+             document.getElementById("result").value = "0" 
+         }
+      </script>
+       
+     <footer >
+   
+        <p id="stopka"> Strona stworzona przez: Martyna Borkowska i Magda Woźniak &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kontakt: <a  href="mailto:marti.borkow@gmail.com">
+            marti.borkow@gmail.com</a> <a  href="mailto:pojemnabogusia@wp.pl">
+            pojemnabogusia@wp.pl</a>.</p>
+      </footer>
+     
+    </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html class="no-js"> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="stronka.css">
+    </head>
+    <body>
+     <h1 id="tytul2">WLZPAOW </h1>
+     <a href ="stronka.html">Strona główna </a>
+     <a href ="strona1.html"> Kadra </a>
+     <a href ="strona2.html"> Kalkulator promili </a>
+     <a href ="strona3.html"> Test </a>
+     <a href ="strona4.html"> Podopieczni </a>
+     <a href ="strona5.html"> Zapisy </a>
+   
+     <h1 id="tytul"> Wpisz ile masz aktualnie promili w organizmie </h1>
+     <table id=kalkulator> 
+        <tr> 
+           <td colspan="3"><input type="text" id="wynik"/></td> 
+           <td><input type="button" value="c" onclick="czysc()"/> </td> 
+        </tr> 
+        <tr> 
+           <td><input type="button" value="1" onclick="liczba('1')"/> </td> 
+           <td><input type="button" value="2" onclick="liczba('2')"/> </td> 
+           <td><input type="button" value="3" onclick="liczba('3')"/> </td> 
+        </tr> 
+        <tr> 
+           <td><input type="button" value="4" onclick="liczba('4')"/> </td> 
+           <td><input type="button" value="5" onclick="liczba('5')"/> </td> 
+           <td><input type="button" value="6" onclick="liczba('6')"/> </td> 
+        </tr> 
+        <tr> 
+           <td><input type="button" value="7" onclick="liczba('7')"/> </td> 
+           <td><input type="button" value="8" onclick="liczba('8')"/> </td> 
+           <td><input type="button" value="9" onclick="liczba('9')"/> </td> 
+        </tr> 
+        <tr> 
+           <td><input type="button" value="." onclick="liczba('.')"/> </td> 
+           <td><input type="button" value="0" onclick="liczba('0')"/> </td> 
+           <td><input type="button" value="=" onclick="rozwiaz()"/> </td> 
+        </tr> 
+      </table>
+
+      <script> 
+        
+        function liczba(val) 
+        { 
+            document.getElementById("wynik").value+=val 
+        } 
+          
+       
+        function rozwiaz() 
+        { 
+            let x = document.getElementById("wynik").value 
+            let y = eval(x) 
+            if (wynik > 1) {
+               document.getElementById("wynik").value = "Prawie nic nie piłeś, tak trzymaj!";
+                           } 
+                           else 
+                             if (wynik > 1) {
+                              document.getElementById("wynik").value = "Tochę się najebałeś, zluzuj";
+                             }  
+                              else
+                  
+                                 if (wynik > 2)
+                                 {
+                                    document.getElementById("wynik").value = "Jesteś pijany! Dzwonię na pały!";
+                                 }     
+        } 
+        function czysc() 
+        { 
+            document.getElementById("wynik").value = "" 
+        } 
+     </script> 
+        
+       
+        <footer >
+   
+         <p id="stopka"> Strona stworzona przez: Martyna Borkowska i Magda Woźniak &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kontakt: <a  href="mailto:marti.borkow@gmail.com">
+             marti.borkow@gmail.com</a> <a  href="pojemnabogusia@wp.pl">
+             pojemnabogusia@wp.pl</a>.</p>
+       </footer>
+
+       <script src="dragster.min.js"></script>
+
+       <script src="shopping-cart-demo.js"></script>
+    </body>
+</html>
+
