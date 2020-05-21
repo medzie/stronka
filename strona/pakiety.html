@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+ <html lang="pl-PL">
+
+ <head>
+
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>EndDrink</title>
+
+    <style type="text/css"></style>
+
+<link href="https://fonts.googleapis.com/css?family=Russo+One|Indie+Flower|Francois+One|Abril+Fatface|Girassol|Courgette|Merienda+One|Kadwa|Roboto|Suez+One|Paytone+One|Playball|PT+Sans+Narrow|Staatliches|Cantata+One|Yeseva+One&display=swap" rel="stylesheet">
+
+ </head>
+
+<body>
+
+<link rel="stylesheet" href="css.css">
+
+  <div id="uklad_strony">
+    <div id="logo">
+    <a href="index.html">
+        <h2><span class="jasne_logo">End</span>Drink</h2>
+    </a>
+    </div>
+    <div id="menu">
+        <ul>
+        <li><a href="kalkulator.html">Kalkulator promili</a></li>
+        <li><a href="test.html">Test</a></li>
+        <li><a href="pakiety.html">Pakiety</a></li>
+        <li><a href="barek.html">Barek</a></li>
+        </ul>
+    </div>
+
+<div id="pakiety">
+
+    <div id="koszyk">Koszyk</div><input type="button" id="czysc" value="czyść" onclick="czysc()">
+
+    <div id="t2">Pakiet dla pijących w weekendy [95 zł]</div>
+    <button class="dodaj" value="95" id="t1">Dodaj</button>
+
+    <div id="t2">Pakiet dla pijacych w dni nieparzyste [169 zł]</div>
+    <button class="dodaj" value="169" id="t1">Dodaj</button>
+    <div id="t2">Pakiet dla pijących w dni parzystke [125 zł]</div>
+
+    <button class="dodaj" value="125" id="t1">Dodaj</button>
+    <div id="t2">Pakiet rodzinny [525 zł]</div>
+    <button class="dodaj" value="525" id="t1">Dodaj</button>
+
+    <div id="t2">Pakiet dla singli "znajdź swojego alkholika" [190 zł]</div>
+    <button class="dodaj" value="190" id="t1">Dodaj</button>
+
+    <div id="t2">Pakiet dla moherów [69 zł]</div>
+    <button class="dodaj" value="69" id="t1">Dodaj</button>
+
+    <div id="t2">Pakiet dla trudniej młodzieży [10 zł]</div>
+    <button class="dodaj" value="10" id="t1">Dodaj</button>
+
+</div>
+
+    <script>
+    const divs = document.getElementsByClassName('dodaj');
+     const koszyk = document.getElementById("koszyk");
+     let ogolnaCena = 0;
+     let item = 0;
+     
+     for(let i=0;i<divs.length; i++) {
+       divs[i].addEventListener('click', dodajDoKoszyka);
+     }
+     
+     function dodajDoKoszyka(){
+         let cena = parseFloat(this.value) + ogolnaCena;
+       item++
+       koszyk.innerHTML = `Koszyk: ${cena} zł`;
+       ogolnaCena += parseFloat(this.value);
+     }
+
+     function czysc() 
+        { 
+            location.reload();
+        }
+        
+     </script>
+
+   <div id="footer">
+   <p>&copy Wszelkie prawa zastrzeżone. &diams; Kontakt : <a href="mailto:pojemnabogusia@wp.pl">pojemnabogusia@wp.pl</a> oraz <a href="mailto:marti.borkow@gmail.com">marti.borkow@gmail.com</a> &diams; </p>
+   </div>
+
+</div>
+
+
+</body>
+
+</html>

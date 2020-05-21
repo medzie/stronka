@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+ <html lang="pl-PL">
+
+ <head>
+
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>EndDrink</title>
+
+    <style type="text/css"></style>
+
+<link href="https://fonts.googleapis.com/css?family=Russo+One|Indie+Flower|Francois+One|Abril+Fatface|Girassol|Courgette|Merienda+One|Kadwa|Roboto|Suez+One|Paytone+One|Playball|PT+Sans+Narrow|Staatliches|Cantata+One|Yeseva+One&display=swap" rel="stylesheet">
+
+ </head>
+
+<body>
+
+<link rel="stylesheet" href="css.css">
+
+  <div id="uklad_strony">
+    <div id="logo">
+    <a href="index.html">
+        <h2><span class="jasne_logo">End</span>Drink</h2>
+    </a>
+    </div>
+    <div id="menu">
+        <ul>
+        <li><a href="kalkulator.html">Kalkulator promili</a></li>
+        <li><a href="test.html">Test</a></li>
+        <li><a href="pakiety.html">Pakiety</a></li>
+        <li><a href="barek.html">Barek</a></li>
+        </ul>
+    </div>
+
+    <div id="ilepromili">
+        Ile Masz promili w swoim organizmie?
+    </div>
+
+    <table id="kalkulator"> 
+        <tr> 
+           <td colspan="3"><input type="text" id="wynik"/></td> 
+           <td><input type="button" id="przycisk" value="c" onclick="czysc()"/> </td> 
+        </tr> 
+        <tr> 
+           <td><input type="button" id="przycisk" value="Między 0 a 0.5" id="1" onclick="liczba('Zjadłeś Pawełka i się jarasz zjebie?')"/> </td> 
+           <td><input type="button" id="przycisk" value="Między 0.5 a 1" onclick="liczba('Po Radlerku to ty sobie możesz')"/> </td> 
+           <td><input type="button" id="przycisk" value="Między 1 a 1.5" onclick="liczba('Idealnie najebany, dalej nie pij!')"/> </td> 
+        </tr> 
+        <tr> 
+           <td><input type="button" id="przycisk" value="Między 1.5 a 2" onclick="liczba('Na tym poprzestań!')"/> </td> 
+           <td><input type="button" id="przycisk" value="Między 2 a 2.5" onclick="liczba('To już przesada...')"/> </td> 
+           <td><input type="button" id="przycisk" value="Między 2.5 a 3" onclick="liczba('Zdecydowanie za dużo wypiłeś')"/> </td> 
+        </tr> 
+        <tr> 
+           <td><input type="button" id="przycisk" value="Między 3 a 3.5" onclick="liczba('Jest z tobą źle!')"/> </td> 
+           <td><input type="button" id="przycisk" value="Między 3.5 a 4" onclick="liczba('Dzwoń pod 112!')"/> </td> 
+           <td><input type="button" id="przycisk" value="Między 4 a 4.5" onclick="liczba('lol umar se')"/> </td> 
+        </tr> 
+
+      </table>
+      <script> 
+
+        function liczba(val) 
+        { 
+            document.getElementById("wynik").value+=val 
+        } 
+          
+        function czysc() 
+        { 
+            document.getElementById("wynik").value = "" 
+        } 
+     </script> 
+
+
+   <div id="footer">
+   <p>&copy Wszelkie prawa zastrzeżone. &diams; Kontakt : <a href="mailto:pojemnabogusia@wp.pl">pojemnabogusia@wp.pl</a> oraz <a href="mailto:marti.borkow@gmail.com">marti.borkow@gmail.com</a> &diams; </p>
+   </div>
+
+</div>
+
+
+</body>
+
+</html>
