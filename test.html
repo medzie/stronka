@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+ <html lang="pl-PL">
+
+ <head>
+
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>EndDrink</title>
+
+    <style type="text/css"></style>
+
+<link href="https://fonts.googleapis.com/css?family=Russo+One|Indie+Flower|Francois+One|Roboto|Paytone+One&display=swap" rel="stylesheet">
+
+ </head>
+
+<body>
+
+<link rel="stylesheet" href="css.css">
+
+  <div id="uklad_strony">
+    <div id="logo">
+    <a href="index.html">
+        <h2><span class="jasne_logo">End</span>Drink</h2>
+    </a>
+    </div>
+    <div id="menu">
+        <ul>
+        <li><a href="kalkulator.html">Kalkulator promili</a></li>
+        <li><a href="test.html">Test</a></li>
+        <li><a href="pakiety.html">Pakiety</a></li>
+        <li><a href="barek.html">Barek</a></li>
+        </ul>
+    </div>
+
+<div id="calyquiz">
+    <div id="quiz"></div>
+    <button id="submit">Rozwiąż</button>
+    <div id="results"></div>
+</div> 
+
+    <script>
+    (function(){
+        function buildQuiz(){
+          // zmienna do przechowywania danych wyjściowych 
+          const output = [];
+      
+          // dla kazdego pytania
+          myQuestions.forEach(
+            (currentQuestion, questionNumber) => {
+      
+              // zmienna do przechowywania listy możliwych odpowiedzi
+              const answers = [];
+      
+              // i dla każdej  odpowiedzi
+              for(letter in currentQuestion.answers){
+      
+                // dodanie przycisku
+                answers.push(
+                  `<label>
+                    <input type="radio" name="question${questionNumber}" value="${letter}">
+                    ${letter} :
+                    ${currentQuestion.answers[letter]}
+                  </label>`
+                );
+              }
+      
+              // dodanie pytania i  jego odpowiedzi do wyniku
+              output.push(
+                `<div class="question"> ${currentQuestion.question} </div>
+                <div class="answers"> ${answers.join('')} </div>`
+              );
+            }
+          );
+      
+          // na koniec połącz naszą listę wyników w jeden ciąg HTML i umieść ją na stronie
+
+          quizContainer.innerHTML = output.join('');
+        }
+        
+      
+        function showResults(){
+      
+          // zbierz odpowiedzi z quizu
+          const answerContainers = quizContainer.querySelectorAll('.answers');
+          
+          // sledz odp 
+          let numCorrect = 0;
+      
+          // dla kazdego pytania
+          myQuestions.forEach( (currentQuestion, questionNumber) => {
+      
+            // znajdz zaznaczone odp
+            const answerContainer = answerContainers[questionNumber];
+            const selector = `input[name=question${questionNumber}]:checked`;
+            const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+      
+            // jesli odpowiedz jest dobra
+            if(userAnswer === currentQuestion.correctAnswer){
+              // dodaj punkt do dobrych odpowiedzi
+              numCorrect++;
+      
+              // zaznacz na zielono
+              answerContainers[questionNumber].style.color = 'lightgreen';
+            }
+            // jesli odpowedzi sa zle
+            else{
+              // zaznacz na czerwono
+              answerContainers[questionNumber].style.color = 'red';
+              
+            }
+          });
+          
+      
+          // pokaz ilosc prawidlowych odp
+          if(numCorrect == 0){
+          resultsContainer.innerHTML = `Masz duży problem alkoholowy! Skontaktuj się z nami!`;
+          }
+          if(numCorrect == 1){
+          resultsContainer.innerHTML = `Jesteś uzależniony, zapisz się na nasze zajęcia`;
+
+          }
+          if(numCorrect == 2){
+          resultsContainer.innerHTML = `Jesteś trochę uzależniony, skontaktuj się z nami`;
+          
+          
+          }
+          if(numCorrect == 3){
+          resultsContainer.innerHTML = `Nie potrzebujesz pomocy`;
+          
+          
+          }
+         
+        }
+        
+
+        const quizContainer = document.getElementById('quiz');
+        const resultsContainer = document.getElementById('results');
+        const submitButton = document.getElementById('submit');
+        const myQuestions = [
+          {
+            question: "Co ile czasu spożywasz alkohol?",
+            answers: {
+              a: "Co weekend",
+              b: "Co drugi dzień",
+              c: "Codziennie"
+            },
+            correctAnswer: "a"
+          },
+          {
+            question: "Czy zażywasz narkotyki?",
+            answers: {
+              a: "tak",
+              b: "nie",
+              c: "czasami"
+            },
+            correctAnswer: "b"
+          },
+          {
+            question: "Czy ktoś z twojego otoczenia zauważył w Tobie jakąś zmiane? ",
+            answers: {
+              a: "Tak",
+              b: "Nie",
+              c: "Nie przypominam sobie"
+            },
+            correctAnswer: "b" 
+          }
+        ];
+      
+        // pokazanie wyników
+        buildQuiz();
+      
+        submitButton.addEventListener('click', showResults);
+      })();
+     
+    </script>
+
+   <div id="footer">
+   <p>&copy Wszelkie prawa zastrzeżone. &diams; Kontakt : <a href="mailto:pojemnabogusia@wp.pl">pojemnabogusia@wp.pl</a> oraz <a href="mailto:marti.borkow@gmail.com">marti.borkow@gmail.com</a> &diams; </p>
+   </div>
+
+</div>
+
+</body>
+
+</html>

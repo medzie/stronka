@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+ <html lang="pl-PL">
+
+ <head>
+
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>EndDrink</title>
+
+    <style type="text/css"></style>
+        
+<link href="https://fonts.googleapis.com/css?family=Russo+One|Indie+Flower|Francois+One|Roboto|Paytone+One&display=swap" rel="stylesheet">
+
+ </head>
+
+<body>
+
+<link rel="stylesheet" href="css.css">
+
+  <div id="uklad_strony">
+    <div id="logo">
+    <a href="index.html">
+        <h2><span class="jasne_logo">End</span>Drink</h2>
+    </a>
+    </div>
+    <div id="menu">
+        <ul>
+        <li><a href="kalkulator.html">Kalkulator promili</a></li>
+        <li><a href="test.html">Test</a></li>
+        <li><a href="pakiety.html">Pakiety</a></li>
+        <li><a href="barek.html">Barek</a></li>
+        </ul>
+    </div>
+
+    <div id="barektekst">
+        Jeżeli udało ci się wyjść z nałogu, zapraszamy do skorzystania z szerokiej oferty alkoholowej!
+    </div>
+
+    
+
+    <div id="tabelka">
+
+        <div class="produkt">
+            <div class="nazwa"><h3>Żywiec [3zł]</h3></div>
+            <img src="photo/zywiec.jpg" id="piwo" class="hero-image">
+            <button class="dodaj" onclick="okienko()">Dodaj do koszyka</button>
+        </div>
+
+        <div class="produkt">
+            <div class="nazwa"><h3>Tyskie [3zł]</h3></div>
+            <img src="photo/tyskie.jpg" id="piwo">
+            <button class="dodaj" onclick="okienko()">Dodaj do koszyka</button>
+        </div>
+
+        <div class="produkt">
+            <div class="nazwa"><h3>Żubr [3zł]</h3></div>
+            <img src="photo/zubr.jpg" id="piwo">
+            <button class="dodaj" onclick="okienko()">Dodaj do koszyka</button>
+        </div>
+
+        <div class="produkt">
+            <div class="nazwa"><h3>Lech [3zł]</h3></div>
+            <img src="photo/lech.jpg" id="piwo">
+            <button class="dodaj" onclick="okienko()">Dodaj do koszyka</button>
+        </div>
+
+        <div class="produkt">
+            <div class="nazwa"><h3>Okocim [3zł]</h3></div>
+            <img src="photo/okocim.jpg" id="piwo">
+            <button class="dodaj" onclick="okienko()">Dodaj do koszyka</button>
+        </div>
+
+        <div class="produkt">
+            <div class="nazwa"><h3>Warka [3zł]</h3></div>
+            <img src="photo/warka.jpg" id="piwo">
+            <button class="dodaj" onclick="okienko()">Dodaj do koszyka</button>
+        </div>
+
+        <div class="produkt">
+            <div class="nazwa"><h3>Dębowe Mocne [3zł]</h3></div>
+            <img src="photo/debowe.jpg" id="piwo">
+            <button class="dodaj" onclick="okienko()">Dodaj do koszyka</button>
+        </div>
+
+        <div class="produkt">
+            <div class="nazwa"><h3>Tatra [3zł]</h3></div>
+            <img src="photo/tatra.jpeg" id="piwo">
+            <button class="dodaj" onclick="okienko()">Dodaj do koszyka</button>
+        </div>
+        
+        <div class="produkt">
+            <div class="nazwa"><h3>Łomża [3zł]</h3></div>
+            <img src="photo/lomza.jpeg" id="piwo">
+            <button class="dodaj" onclick="okienko()">Dodaj do koszyka</button>
+        </div>
+
+        <div class="produkt">
+            <div class="nazwa"><h3>Perła [3zł]</h3></div>
+            <img src="photo/perla.jpg" id="piwo">
+            <button class="dodaj" onclick="okienko()">Dodaj do koszyka</button>
+        </div>
+
+        <div class="produkt">
+            <div class="nazwa"><h3>Książęce [3zł]</h3></div>
+            <img src="photo/ksiazece.jpg" id="piwo">
+            <button class="dodaj" onclick="okienko()">Dodaj do koszyka</button>
+        </div>
+
+        <div class="produkt">
+            <div class="nazwa"><h3>Desperados [3zł]</h3></div>
+            <img src="photo/desperados.jpg" id="piwo">
+            <button class="dodaj" onclick="okienko()">Dodaj do koszyka</button>
+        </div>
+    
+    </div>
+        
+    <button class="dodaj" onclick="usuwanie()" id="usuwanie">Wyczyść koszyk</button>
+    
+    <script>
+
+var cena=3, wynik=0;
+
+function usuwanie(val) 
+        { 
+            document.cookie =wynik-=wynik ;
+        } 
+
+        function okienko(val)
+        {
+            localStorage.cookies_accepted = true;
+            document.cookie = wynik+=cena;
+            alert("Koszyk: " + document.cookie + " zł" );
+        }
+
+
+    </script>
+
+
+   <div id="footer">
+   <p>&copy Wszelkie prawa zastrzeżone. &diams; Kontakt : <a href="mailto:pojemnabogusia@wp.pl">pojemnabogusia@wp.pl</a> oraz <a href="mailto:marti.borkow@gmail.com">marti.borkow@gmail.com</a> &diams; </p>
+   </div>
+
+</div>
+
+
+</body>
+
+</html>
