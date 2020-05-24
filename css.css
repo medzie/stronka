@@ -49,7 +49,14 @@ a { color:white; text-decoration: none; } /*kolor*/
 	font-family: 'Roboto';
 }
 
-#menu a:hover { color: #b32929; } /*odnośniki*/ 
+#menu a:hover { color: #b32929; } /*odnośniki*/
+
+#zegarek
+{
+	color: white;
+    font-size: 16.2px;
+}
+
 
 #header {
 	float: left;
