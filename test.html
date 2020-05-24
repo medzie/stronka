@@ -20,9 +20,11 @@
   <div id="uklad_strony">
     <div id="logo">
     <a href="index.html">
-        <h2><span class="jasne_logo">End</span>Drink</h2>
+        <h2><span class="jasne_logo">End</span>Drink <div id="zegarek"></div></h2>
     </a>
     </div>
+    
+
     <div id="menu">
         <ul>
         <li><a href="kalkulator.html">Kalkulator promili</a></li>
@@ -39,6 +41,20 @@
 </div> 
 
     <script>
+
+            function zegar() {
+            var data = new Date();
+            var godzina = data.getHours();
+            var min = data.getMinutes();
+            var sek = data.getSeconds();
+             var terazjest = ""+godzina+
+            ((min<10)?":0":":")+min+
+            ((sek<10)?":0":":")+sek;
+            document.getElementById("zegarek").innerHTML = terazjest;
+            setTimeout("zegar()", 1000); }
+            zegar();
+
+
     (function(){
         function buildQuiz(){
           // zmienna do przechowywania danych wyjściowych 
@@ -177,7 +193,6 @@
    <div id="footer">
    <p>&copy Wszelkie prawa zastrzeżone. &diams; Kontakt : <a href="mailto:pojemnabogusia@wp.pl">pojemnabogusia@wp.pl</a> oraz <a href="mailto:marti.borkow@gmail.com">marti.borkow@gmail.com</a> &diams; </p>
    </div>
-
 </div>
 
 </body>
